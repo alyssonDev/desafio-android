@@ -9,6 +9,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Desafio Picpay/desafio-android/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Desafio Picpay/desafio-android/app/src/main/res/layout/list_item_user.xml" value="0.128125" />
+        <entry key="..\:/Desafio Picpay/desafio-android/app/src/main/res/layout/user_activity.xml" value="0.128125" />
       </map>
     </option>
   </component>

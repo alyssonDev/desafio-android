@@ -13,7 +13,7 @@ class AppUserRepository(private val picPayApi: PicPayApi) : UserRepository {
         try {
             ResultOf.Success(picPayApi.getUsers())
         } catch (exception: Exception) {
-            ResultOf.Error(exception.message)
+            ResultOf.Error(exception)
         }
     }
 

@@ -19,12 +19,12 @@ class GetUser(
             is ResultOf.Success -> {
                 transformSuccess(result.value)
             }
-            is ResultOf.Error -> transformError(result.message)
+            is ResultOf.Error -> transformError(result.error)
         }
     }
 
-    private fun transformError(message: String?): ResultOf<List<User>> {
-        return ResultOf.Error(message)
+    private fun transformError(error: Throwable): ResultOf<List<User>> {
+        return ResultOf.Error(error)
     }
 
     private fun transformSuccess(value: List<UserResponse>): ResultOf<List<User>> {
