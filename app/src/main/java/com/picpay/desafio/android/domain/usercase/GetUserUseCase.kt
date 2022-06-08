@@ -15,17 +15,12 @@ class GetUser(
     private val userRepository: UserRepository
 ) : GetUserUseCase {
     override suspend fun invoke(): ResultOf<List<User>> {
-        val result = userRepository.getUser()
-        return when (result) {
+        return when (val result = userRepository.getUser()) {
             is ResultOf.Success -> {
                 transformSuccess(result.value)
             }
             is ResultOf.Error -> transformError(result.message)
         }
-    }
-
-    private fun insertDataLocal(value: List<UserResponse>) {
-        TODO("Not yet implemented")
     }
 
     private fun transformError(message: String?): ResultOf<List<User>> {

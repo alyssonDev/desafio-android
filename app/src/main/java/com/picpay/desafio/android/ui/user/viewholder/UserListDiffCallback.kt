@@ -1,7 +1,6 @@
-package com.picpay.desafio.android.ui.main.viewholder
+package com.picpay.desafio.android.ui.user.viewholder
 
 import androidx.recyclerview.widget.DiffUtil
-import com.picpay.desafio.android.data.remote.response.UserResponse
 import com.picpay.desafio.android.domain.model.User
 
 class UserListDiffCallback(

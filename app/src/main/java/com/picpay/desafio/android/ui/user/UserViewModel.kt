@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.ui.main
+package com.picpay.desafio.android.ui.user
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,7 +9,7 @@ import com.picpay.desafio.android.domain.usercase.GetUserUseCase
 import com.picpay.desafio.android.util.ResultOf
 import kotlinx.coroutines.launch
 
-class MainViewModel(
+class UserViewModel(
     private val getUserUseCase: GetUserUseCase
 ) : ViewModel() {
     private val _listUsers: MutableLiveData<List<User>> = MutableLiveData()

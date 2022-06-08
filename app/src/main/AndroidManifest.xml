@@ -17,7 +17,8 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="n">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.user.UserActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

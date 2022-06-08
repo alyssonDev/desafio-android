@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.ui.main
+package com.picpay.desafio.android.ui.user
 
 import android.os.Bundle
 import android.view.View
@@ -9,27 +9,25 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.picpay.desafio.android.R
-import com.picpay.desafio.android.ui.main.adapter.UserListAdapter
+import com.picpay.desafio.android.ui.user.adapter.UserListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class UserActivity : AppCompatActivity(R.layout.user_activity) {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
     private lateinit var adapter: UserListAdapter
-    private val viewModel: MainViewModel by viewModel()
+    private val viewModel: UserViewModel by viewModel()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupRecyclerView()
         setupObserver()
-
     }
 
     private fun setupRecyclerView() {
         recyclerView = findViewById(R.id.recyclerView)
-        progressBar = findViewById(R.id.user_list_progress_bar)
-        progressBar.visibility = View.VISIBLE
         adapter = UserListAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -40,6 +38,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             adapter.users = it
             progressBar.visibility = View.GONE
         }
+
         viewModel.errorMessage.observe(this) {
             Toast.makeText(this, it, Toast.LENGTH_LONG).show()
         }
